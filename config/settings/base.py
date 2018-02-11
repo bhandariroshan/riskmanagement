@@ -292,3 +292,4 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+ALLOWED_HOSTS = ['45.55.228.162', '45.55.228.162:8003' ]
