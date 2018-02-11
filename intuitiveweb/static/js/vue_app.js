@@ -2,7 +2,7 @@ window.Event = new Vue();
 
 Vue.component('mydivlabel', {
   props: ['riskfield'],
-  template: `<div class="field">
+  template: `<div class="field" style="margin: 6px;">
                 <label for="name" class="label">{{riskfield.risk_field_name}}</label>
                 <div  v-if="riskfield.risk_field_data_type === 'Text'">
                     <div class="control">
