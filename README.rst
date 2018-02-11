@@ -1,4 +1,4 @@
-IntuitiveWebSolution
+Vue JS Demo Application
 ====================
 
 Sample Project
