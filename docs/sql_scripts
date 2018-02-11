@@ -1,0 +1,31 @@
+Insert into risks_risktype
+(id, name)
+values
+(1, 'Risk1')
+
+Insert into risks_risktype
+(id, name)
+values
+(2, 'Risk2');
+
+Delete from risks_riskfield;
+
+Insert into  risks_riskfield
+(id, risk_field_name, risk_field_data_type, risk_type_id)
+values
+(1, 'Field1', 'Text', 1);
+
+Insert into  risks_riskfield
+(id, risk_field_name, risk_field_data_type, risk_type_id)
+values
+(2, 'Field2', 'Number', 1);
+
+Insert into  risks_riskfield
+(id, risk_field_name, risk_field_data_type, risk_type_id)
+values
+(3, 'Field3', 'Date', 1);
+
+Insert into  risks_riskfield
+(id, risk_field_name, risk_field_data_type, risk_type_id)
+values
+(4, 'Field4', 'Enum', 1);
