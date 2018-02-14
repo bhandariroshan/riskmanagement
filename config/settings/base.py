@@ -50,6 +50,7 @@ THIRD_PARTY_APPS = [
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_framework',
+    'zappa_django_utils',
 ]
 
 REST_FRAMEWORK = {
@@ -123,7 +124,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'NAME': 'intuitive',
+        'NAME': 'newdb',
         'HOST': 'localhost',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'USER': 'helloroshan',
@@ -131,6 +132,17 @@ DATABASES = {
         'PORT': 5432
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'insurance',
+#         'USER': 'root',
+#         'PASSWORD': 'insurance',
+#         'HOST': 'insurance-db.cuv2mcduhsmz.ap-southeast-2.rds.amazonaws.com',
+#         'PORT': '5432'
+#     }
+# }
 
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -292,4 +304,3 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
-ALLOWED_HOSTS = ['45.55.228.162', '45.55.228.162:8003' ]

@@ -14,9 +14,12 @@ Vue.component('mydivlabel', {
                 </div>
                 <div  v-if="riskfield.risk_field_data_type === 'Enum'">
                     <div class="control">
-                        <input class="input"
-                           v-bind:name="riskfield.risk_field_name"
-                            v-bind:placeholder="riskfield.risk_field_name">
+                            <select v-bind:name="riskfield.risk_field_name"  class="input">
+                              <option disabled value="" selected="selected">Please select one</option>
+                              <option v-for="eachchoice in riskfield.risk_field_choices" value="eachchoice.choice">
+                              {{eachchoice.choice}}
+                              </option>
+                            </select>
                     </div>
                 </div>
                 <div  v-if="riskfield.risk_field_data_type === 'Number'">
@@ -46,7 +49,10 @@ Vue.component('mydivlabel', {
 
 var app7 = new Vue({
   el: '#app',
-  data: {riskFieldList: []},
+  data: {
+        riskFieldList: [],
+        selected: 'Please select one'
+  },
   mounted() {
     const vm = this;
     axios.get('/risks/types/1/')

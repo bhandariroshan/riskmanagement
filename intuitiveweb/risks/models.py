@@ -33,6 +33,16 @@ class RiskField(models.Model):
     def __str__(self):
         return "%s" % (self.risk_field_name)
 
+class RiskFieldChoices(models.Model):
+    risk_field_id = models.ForeignKey(RiskField)
+    choice = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return '%d: %s' % (self.risk_field_id, self.choice)
+
+    def __str__(self):
+        return "%s" % (self.choice)
+
 class RiskFieldValue(models.Model):
     id = models.IntegerField(primary_key=True)
     risk_field = models.ForeignKey(RiskField)

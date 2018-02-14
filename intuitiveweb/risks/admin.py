@@ -1,5 +1,16 @@
 from django.contrib import admin
-from .models import RiskType, RiskField
+from .models import RiskType, RiskField, RiskFieldChoices
+
+# Register your models here.
+@admin.register(RiskFieldChoices)
+class RiskTypeAdmin(admin.ModelAdmin):
+    """ Admin class for RiskType Result."""
+
+    list_display = (
+        "id", "risk_field_id", "choice",
+    )
+    ordering = ("id",)
+
 
 # Register your models here.
 @admin.register(RiskType)
