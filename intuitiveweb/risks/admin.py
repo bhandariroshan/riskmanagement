@@ -1,16 +1,25 @@
 from django.contrib import admin
 from .models import RiskType, RiskField, RiskFieldChoices
+from django import forms
 
 # Register your models here.
 @admin.register(RiskFieldChoices)
-class RiskTypeAdmin(admin.ModelAdmin):
+class RiskFieldChoicesAdmin(admin.ModelAdmin):
     """ Admin class for RiskType Result."""
-
+    # form = MyFieldChoiceForm
     list_display = (
         "id", "risk_field_id", "choice",
     )
     ordering = ("id",)
 
+# class MyFieldChoiceForm(forms.ModelForm):
+#     risk_field_id = CustomModelChoiceField(queryset=RiskField.objects.all())
+#     class Meta:
+#           model = RiskFieldChoices
+#
+# class CustomModelChoiceField(forms.ModelChoiceField):
+#      def label_from_instance(self, obj):
+#          return "%s %s" % (obj.risk_type.name, obj.last_name)
 
 # Register your models here.
 @admin.register(RiskType)

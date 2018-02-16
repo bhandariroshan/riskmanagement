@@ -14,6 +14,12 @@ urlpatterns = [
         view=ShowRisks.as_view(),
         name='show'
     ),
+    url(
+        regex=r'^show/(?P<id>[-\w]+)/$',
+        view=ShowRisks.as_view(),
+        name='showdetails'
+    ),
+
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
     # Django Admin, use {% url 'admin:index' %}

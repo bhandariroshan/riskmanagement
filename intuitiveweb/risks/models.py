@@ -28,10 +28,10 @@ class RiskField(models.Model):
     risk_field_data_type = models.CharField(max_length=10,choices=FIELD_CHOICES)
 
     def __unicode__(self):
-        return '%d: %s' % (self.risk_field_name, self.risk_field_name)
+        return str(self.risk_type.name) + '::' + str(self.risk_field_name)
 
     def __str__(self):
-        return "%s" % (self.risk_field_name)
+        return str(self.risk_type.name) + '::' + str(self.risk_field_name)
 
 class RiskFieldChoices(models.Model):
     risk_field_id = models.ForeignKey(RiskField)

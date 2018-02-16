@@ -8,8 +8,21 @@
 	</head>
 
 	<body>
-		<div class="container" id="app" style="width: 500px; top: 70px;border: 1px;background: aliceblue;">
-      <h1 class="title" style="text-align: center;">Add Risk Type Values</h1>
+    <div class="container"  style="width: 500px; top: 70px;border: 1px; height: 30px; background: red;">
+        <div class="control" id="app1">
+           <select name="risktype"  v-on:change="loadnewForm" class="input">
+             <option disabled value="" selected="selected">Please select a Risk Type</option>
+              <option
+              v-for="eachrisktype in riskTypes"
+              v-bind:value="eachrisktype.id">
+                ${eachrisktype.name}
+              </option>
+           </select>
+        </div>
+    </div>
+
+		<div class="container" style="width: 500px; top: 70px;border: 1px;background: aliceblue;">
+      <h1 class="title" style="text-align: center;">Add Values</h1>
       <div id="app" style="margin: 10px;">
             <form v-on:submit.prevent="addRiskValue">
               <mydivlabel
@@ -26,6 +39,7 @@
 
     <script type="text/javascript" src="{% static "js/vue.js" %}"></script>
     <script type="text/javascript" src="{% static "js/axios.min.js" %}"></script>
+    <script type="text/javascript">var risktypeid = {{risktypeid|safe}};</script>
 		<script type="text/javascript" src="{% static "js/vue_app.js" %}"></script>
 	</body>
 
