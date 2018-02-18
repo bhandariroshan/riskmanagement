@@ -1,6 +1,5 @@
 window.Event = new Vue();
 
-
 Vue.component('mydivlabel', {
   props: ['riskfield'],
   template: `<div class="field" style="margin: 6px;">
@@ -60,12 +59,12 @@ var app1 = new Vue({
   methods: {
     loadnewForm: function(e){
            var selected_id = e.target.value;
-           window.location = '/show/' + selected_id + '/'
+           window.location = '/dev/show/' + selected_id + '/'
         }
   },
   mounted() {
     const vm = this;
-    axios.get('/risks/types/')
+    axios.get('/dev/risks/types/')
       .then(function (response) {
         vm.riskTypes = response.data;
         console.log(response);
@@ -85,7 +84,7 @@ var app7 = new Vue({
   },
   mounted() {
     const vm = this;
-    axios.get('/risks/types/' + risktypeid + '/')
+    axios.get('/dev/risks/types/' + risktypeid + '/')
       .then(function (response) {
         console.log(response);
         vm.riskFieldList = response.data.riskfields;
