@@ -51,6 +51,7 @@ THIRD_PARTY_APPS = [
     'allauth.socialaccount',  # registration
     'rest_framework',
     'zappa_django_utils',
+    'storages',
 ]
 
 REST_FRAMEWORK = {
@@ -124,7 +125,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'NAME': 'intuitive',
+        'NAME': 'intuitivewebnew',
         'HOST': 'intutiveweb.ci2ksg5rptgs.us-east-1.rds.amazonaws.com',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'USER': 'roshan',
@@ -293,3 +294,8 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+
+AWS_STORAGE_BUCKET_NAME = 'zappa-static-roshan'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
