@@ -68,11 +68,33 @@ The system is setup with reasonable defaults, including 404 logging and integrat
 You must set the DSN url in production.
 
 
-Deployment
-----------
+Steps to deploy and test in in Local:
+--------------------------------------
+1. Git clone
+2. Git checkout master
+3. Python3 pip install -r requiremetnts/requirements.txt
+4. Python3 manage.py migrate
+5. Create a super user using: python3 manage.py createsuperuser
+6. Run server using: Python3 manage.py runserver
+7. Login to admin panel using the superuser credentials
+8. Add Risk Types, Risk Fields and RiskField Choices for any field.
+10. Go to home page.
 
-The following details how to deploy this application.
 
+Steps to deploy and test in in AWS Lambda:
+--------------------------------------
+1. Git clone
+2. Git checkout aws-deploy
+3. Create a virtual env in your machine
+4. Activate the virtual env using: Python3 pip install -r requiremetnts/requirements.txt
+5. zappa init and follow the instructions to create lambda function: 
+6. zappa deploy dev to deploy the application
+7. zappa manage dec migrate to run migrations
+6. Create a super user using: zappa invoke --raw dev "from django.contrib.auth import get_user_model; User=get_user_model(); User.objects.create_superuser('roshan','brishi98@gmail.com', 'roshan123')"
+6. zappa update dev
+7. Login to admin panel using the superuser credentials
+8. Add Risk Types, Risk Fields and RiskField Choices for any field.
+10. Go to home page.
 
 
 Docker
