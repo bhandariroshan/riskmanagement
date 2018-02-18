@@ -73,4 +73,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Your local stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
-ALLOWED_HOSTS = ['45.55.228.162', '45.55.228.162:8003', 'localhost']
+ALLOWED_HOSTS = [
+    'localhost',
+    'j1sl641vdj.execute-api.ap-northeast-1.amazonaws.com'
+]

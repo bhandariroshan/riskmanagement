@@ -64,8 +64,8 @@ REST_FRAMEWORK = {
 # Apps specific for this project go here.
 LOCAL_APPS = [
     # custom users app
-    'intuitiveweb.users.apps.UsersConfig',
-    'intuitiveweb.risks.apps.RisksConfig',
+    'vuejsapp.intuitiveweb.users.apps.UsersConfig',
+    'vuejsapp.intuitiveweb.risks.apps.RisksConfig',
     # Your stuff: custom apps go here
 ]
 
@@ -87,7 +87,7 @@ MIDDLEWARE = [
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
-    'sites': 'intuitiveweb.contrib.sites.migrations'
+    'sites': 'vuejsapp.intuitiveweb.contrib.sites.migrations'
 }
 
 # DEBUG
@@ -124,25 +124,14 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'NAME': 'newdb',
-        'HOST': 'localhost',
+        'NAME': 'intuitive',
+        'HOST': 'intutiveweb.ci2ksg5rptgs.us-east-1.rds.amazonaws.com',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'USER': 'helloroshan',
-        'PASSWORD': 'helloroshan',
+        'USER': 'roshan',
+        'PASSWORD': 'roshan123',
         'PORT': 5432
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'insurance',
-#         'USER': 'root',
-#         'PASSWORD': 'insurance',
-#         'HOST': 'insurance-db.cuv2mcduhsmz.ap-southeast-2.rds.amazonaws.com',
-#         'PORT': '5432'
-#     }
-# }
 
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -238,10 +227,10 @@ MEDIA_URL = '/media/'
 
 # URL Configuration
 # ------------------------------------------------------------------------------
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'vuejsapp.config.urls'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'vuejsapp.config.wsgi.application'
 
 # PASSWORD STORAGE SETTINGS
 # ------------------------------------------------------------------------------
@@ -286,8 +275,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
-ACCOUNT_ADAPTER = 'intuitiveweb.users.adapters.AccountAdapter'
-SOCIALACCOUNT_ADAPTER = 'intuitiveweb.users.adapters.SocialAccountAdapter'
+ACCOUNT_ADAPTER = 'vuejsapp.intuitiveweb.users.adapters.AccountAdapter'
+SOCIALACCOUNT_ADAPTER = 'vuejsapp.intuitiveweb.users.adapters.SocialAccountAdapter'
 
 # Custom user app defaults
 # Select the correct user model

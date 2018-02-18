@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import View
-from intuitiveweb.risks.models import RiskType
+from vuejsapp.intuitiveweb.risks.models import RiskType
 
 
 class ShowRisks(View):

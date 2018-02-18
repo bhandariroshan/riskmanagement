@@ -2,7 +2,7 @@ from django.apps import AppConfig
 
 
 class UsersConfig(AppConfig):
-    name = 'intuitiveweb.users'
+    name = 'vuejsapp.intuitiveweb.users'
     verbose_name = "Users"
 
     def ready(self):

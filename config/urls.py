@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
-from intuitiveweb.risks.views import ShowRisks
+from vuejsapp.intuitiveweb.risks.views import ShowRisks
 
 
 urlpatterns = [
@@ -26,8 +26,8 @@ urlpatterns = [
     url(settings.ADMIN_URL, admin.site.urls),
 
     # User management
-    url(r'^users/', include('intuitiveweb.users.urls', namespace='users')),
-    url(r'^risks/', include('intuitiveweb.risks.urls', namespace='risks')),
+    url(r'^users/', include('vuejsapp.intuitiveweb.users.urls', namespace='users')),
+    url(r'^risks/', include('vuejsapp.intuitiveweb.risks.urls', namespace='risks')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^api-auth/', include('rest_framework.urls'))
 
