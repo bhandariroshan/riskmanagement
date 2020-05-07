@@ -1,5 +1,5 @@
-Vue JS Demo Application
-====================
+Python and Vue JS Application for Risk Management
+================================================
 
 Sample Project
 
